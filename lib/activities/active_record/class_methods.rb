@@ -85,7 +85,7 @@ module Activities
 
         dsl = Activities::Dsl.new
         dsl.trackable = model_class
-        dsl.reflection_name = reflection.primary_key_name.gsub(/_id$/, "")
+        dsl.reflection_name = reflection.foreign_key.gsub(/_id$/, "")
         dsl.instance_eval(&block)
       end
     end
